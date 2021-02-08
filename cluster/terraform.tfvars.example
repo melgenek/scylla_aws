@@ -1,0 +1,8 @@
+name = "melgenek-test"
+vpc_id = "vpc-abcdferty"
+subnets = [
+  "subnet-qwertyuu",
+  "subnet-asdfghjk",
+  "subnet-zxcvbnmn"
+]
+region = "us-east-1"

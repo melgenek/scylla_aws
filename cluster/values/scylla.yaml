@@ -1,0 +1,31 @@
+datacenter: "us-east-1"
+racks:
+  - name: "us-east-1a"
+    scyllaConfig: "scylla-config"
+    scyllaAgentConfig: "scylla-agent-config"
+    members: 2
+    storage:
+      capacity: 20Gi
+      className: local-raid-disks
+    resources:
+      limits:
+        cpu: 1
+        memory: 4Gi
+      requests:
+        cpu: 1
+        memory: 4Gi
+    placement:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: pool
+                    operator: In
+                    values:
+                      - scylla-pool
+      tolerations:
+        - key: role
+          operator: Equal
+          value: scylla-clusters
+          effect: NoSchedule

@@ -1,0 +1,13 @@
+terraform.tfvars
+.terraform/
+terraform.tfstate*
+.terraform.tfstate*
+.terraform.d/
+.aws/
+.ssh/
+
+.idea/
+*.iml
+
+kubeconfig_*
+.cache
